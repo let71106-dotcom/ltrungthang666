@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chúc mừng Trung Thu - Trung Thắng & Tuyết Nhi</title>
+  <style>
+    /* Palette:  */
+    :root {
+      --bg: #fff8e6;
+      --card: #fffefb;
+      --accent: #f7c667;
+      --soft: #f3e6c6;
+      --text: #3b2f2f;
+      --muted: #8b7f7f;
+      --petal: #ffd37a;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #fffdf8 0%, #fff8e6 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 28px;
+    }
+    
+    /* Container */
+    .wrap {
+      width: 100%;
+      max-width: 900px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(56, 44, 20, 0.08);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--accent), #ffd36b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #5a3526;
+      font-size: 22px;
+      box-shadow: 0 6px 18px rgba(243, 170, 70, 0.12);
+    }
+    
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    
+    p.lead {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    
+    /* layout */
+    .main {
+      display: flex;
+      gap: 28px;
+      margin-top: 18px;
+      align-items: flex-start;
+    }
+    
+    .left {
+      flex: 1;
+      min-width: 260px;
+    }
+    
+    .right {
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    /* Login card */
+    .login-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(250, 250, 250, 0.9);
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 10px;
+      transition: border-color 0.3s;
+    }
+    
+    input[type=text]:focus,
+    input[type=password]:focus {
+      border-color: var(--accent);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffb454, #ff9f3b);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 155, 60, 0.12);
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 155, 60, 0.2);
+    }
+    
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    
+    /* message area */
+    .card {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: 0 8px 24px rgba(35, 22, 8, 0.04);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    /* cute decoration: small chiikawa-ish icons built with CSS simple shapes */
+    .cute-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    
+    .chiko {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: #fff4e8;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #c26a4a;
+      box-shadow: 0 6px 16px rgba(194, 106, 74, 0.06);
+    }
+    
+    /* Sunflower */
+    .sunflower-wrap {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+    
+    .sunflower {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .6s ease, opacity .6s ease;
+      opacity: 0;
+      transform: scale(.85) translateY(6px);
+    }
+    
+    .sunflower.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    /* petals */
+    .petal {
+      --r: 100px;
+      position: absolute;
+      width: 90px;
+      height: 40px;
+      border-radius: 40px 40px 20px 20px;
+      background: var(--petal);
+      box-shadow: 0 8px 20px rgba(243, 163, 56, 0.12);
+      transform-origin: 50% 120%;
+    }
+    
+    /* create multiple petals rotated */
+    .petal.p1 {
+      transform: rotate(0deg) translateY(-70px) rotate(0deg);
+    }
+    
+    .petal.p2 {
+      transform: rotate(30deg) translateY(-70px) rotate(-30deg);
+    }
+    
+    .petal.p3 {
+      transform: rotate(60deg) translateY(-70px) rotate(-60deg);
+    }
+    
+    .petal.p4 {
+      transform: rotate(90deg) translateY(-70px) rotate(-90deg);
+    }
+    
+    .petal.p5 {
+      transform: rotate(120deg) translateY(-70px) rotate(-120deg);
+    }
+    
+    .petal.p6 {
+      transform: rotate(150deg) translateY(-70px) rotate(-150deg);
+    }
+    
+    .petal.p7 {
+      transform: rotate(180deg) translateY(-70px) rotate(-180deg);
+    }
+    
+    .petal.p8 {
+      transform: rotate(210deg) translateY(-70px) rotate(-210deg);
+    }
+    
+    .petal.p9 {
+      transform: rotate(240deg) translateY(-70px) rotate(-240deg);
+    }
+    
+    .petal.p10 {
+      transform: rotate(270deg) translateY(-70px) rotate(-270deg);
+    }
+    
+    .petal.p11 {
+      transform: rotate(300deg) translateY(-70px) rotate(-300deg);
+    }
+    
+    .petal.p12 {
+      transform: rotate(330deg) translateY(-70px) rotate(-330deg);
+    }
+    
+    /* center - textured circle with user's image inside */
+    .center {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #6b4b2b, #4a2f1d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 6px solid rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 4px 14px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+    
+    .center img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      border: 3px solid #fff5e8;
+    }
+    
+    .center .placeholder {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f7c667, #ffd36b);
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      border: 3px solid #fff5e8;
+    }
+    
+    /* final wish style */
+    .wish {
+      margin-top: 12px;
+      font-weight: 800;
+      color: #7b3a2f;
+      font-size: 18px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all .45s ease;
+    }
+    
+    .wish.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* small hearts pop */
+    .hearts {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      pointer-events: none;
+    }
+    
+    .heart {
+      width: 18px;
+      height: 18px;
+      background: #ff7b8a;
+      transform: rotate(-20deg);
+      clip-path: polygon(50% 0%, 61% 14%, 75% 16%, 100% 38%, 100% 60%, 76% 84%, 50% 100%, 24% 84%, 0% 60%, 0% 38%, 25% 16%, 38% 14%);
+      opacity: 0;
+      transform-origin: center;
+    }
+    
+    .heart.pop {
+      animation: pop .9s ease forwards;
+    }
+    
+    @keyframes pop {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(.2) rotate(-20deg);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-14px) scale(1.05) rotate(-10deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(.6) rotate(0deg);
+      }
+    }
+    
+    /* responsive */
+    @media (max-width: 760px) {
+      .main {
+        flex-direction: column;
+      }
+      
+      .right {
+        width: 100%;
+      }
+      
+      .sunflower {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .center {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .center img,
+      .center .placeholder {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main" aria-labelledby="title">
+    <div class="hearts" id="heartsContainer" aria-hidden="true"></div>
+    <header>
+      <div class="logo">TT</div>
+      <div>
+        <h1 id="title">Trung Thu vui vẻ</h1>
+        <p class="lead">Màu vàng nhạt, dịu nhẹ</p>
+      </div>
+    </header>
+    <div class="main">
+      <div class="left">
+        <!-- Login area -->
+        <div class="login-card" id="loginCard" aria-live="polite">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div style="font-weight:800">Đăng nhập</div>
+            <div class="muted" style="font-size:13px">Nhập tên và mật khẩu</div>
+          </div>
+          <label for="user">Tài khoản</label>
+          <input id="user" type="text" placeholder="Nhập tài khoản..." autocomplete="username">
+          <label for="pass">Mật khẩu</label>
+          <input id="pass" type="password" placeholder="Nhập mật khẩu..." autocomplete="current-password">
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <button id="loginBtn" class="btn">Đăng nhập</button>
+            <div id="loginMsg" class="muted" aria-live="assertive"></div>
+          </div>
+        </div>
+        
+        <!-- After login: message area -->
+        <div id="afterLogin" style="display:none; margin-top:14px">
+          <div class="card" id="messageCard">Nhấn nút bên phải để bắt đầu gửi lời chúc nhé.</div>
+          <div class="cute-row" aria-hidden="true">
+            <div class="chiko">◡‿◡</div>
+            <div class="chiko">ぴ</div>
+            <div class="chiko">ʕ•ᴥ•ʔ</div>
+          </div>
+        </div>
+      </div>
+      <div class="right" aria-hidden="false">
+        <div style="text-align:center;">
+          <div style="font-weight:700;font-size:16px;">Dành cho</div>
+          <div style="font-weight:800;font-size:20px;color:#6b3a2c;margin-top:6px">Tuyết Nhi</div>
+        </div>
+        <div style="margin-top:12px;">
+          <button id="actionBtn" class="btn" disabled>Đăng nhập để bắt đầu</button>
+        </div>
+        <div class="sunflower-wrap" aria-live="polite">
+          <div class="sunflower" id="sunflower" aria-hidden="true">
+            <!-- petals -->
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+            <div class="petal p5"></div>
+            <div class="petal p6"></div>
+            <div class="petal p7"></div>
+            <div class="petal p8"></div>
+            <div class="petal p9"></div>
+            <div class="petal p10"></div>
+            <div class="petal p11"></div>
+            <div class="petal p12"></div>
+            
+            <!-- center with user's image -->
+            <div class="center" id="centerImage">
+              <!-- Placeholder image if tuyetnhi.png is not found -->
+              <div class="placeholder">TN</div>
+            </div>
+          </div>
+        </div>
+        <div class="wish" id="finalWish" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // credentials (as requested)
+    const CORRECT_USER = "tuyetnhi";
+    const CORRECT_PASS = "ngdepangiang";
+    
+    // Messages
+    const longMessage = "Chúc cốt có một mùa trăng thật vui vẻ, bình yên, tui không biết nhiều về bóng chuyền nhưng chúc cốt đạt được kết quả tốt khi thi đấu nhe, tui vẫn luôn ở bên cốt. Tui chưa biết có thể tặng gì cho cốt, nhưng hy vọng lời chúc này sẽ thay cho món quà nhỏ mà tớ muốn dành cho cốt. Dù xa hay gần, tui vẫn mong cốt luôn mỉm cười, luôn hạnh phúc, vì đối với tui cốt thật đặc biệt.";
+    const shortWish = "Trung Thắng chúc Tuyết Nhi trung thu vui vẻ nhé!! 🌕💖";
+    
+    const loginBtn = document.getElementById('loginBtn');
+    const loginMsg = document.getElementById('loginMsg');
+    const userInput = document.getElementById('user');
+    const passInput = document.getElementById('pass');
+    const afterLogin = document.getElementById('afterLogin');
+    const messageCard = document.getElementById('messageCard');
+    const actionBtn = document.getElementById('actionBtn');
+    const sunflower = document.getElementById('sunflower');
+    const finalWish = document.getElementById('finalWish');
+    const heartsContainer = document.getElementById('heartsContainer');
+    const centerImage = document.getElementById('centerImage');
+    
+    let clickCount = 0;
+    let loggedIn = false;
+    
+    // Try to load user image
+    const userPhoto = new Image();
+    userPhoto.src = "image.png";
+    userPhoto.alt = "anh tuyet nhi";
+    userPhoto.onload = function() {
+      // Replace placeholder with actual image
+      centerImage.innerHTML = '';
+      centerImage.appendChild(userPhoto);
+    };
+    userPhoto.onerror = function() {
+      // Keep placeholder if image not found
+      console.log("Không tìm thấy ảnh tuyetnhi.png. Sử dụng placeholder.");
+    };
+    
+    loginBtn.addEventListener('click', (e) => {
+      const u = (userInput.value || "").trim();
+      const p = (passInput.value || "");
+      
+      if (u === CORRECT_USER && p === CORRECT_PASS) {
+        loggedIn = true;
+        loginMsg.textContent = "Đăng nhập thành công! Chúc bạn gửi lời chúc vui nhé 💛";
+        afterLogin.style.display = "block";
+        actionBtn.disabled = false;
+        document.getElementById('loginCard').style.display = "none";
+        
+        // greet the user
+        messageCard.textContent = "Xin chào " + u + "! Nhấn nút bên phải để bắt đầu gửi lời chúc cho Tuyết Nhi.";
+        
+        // focus action button
+        actionBtn.textContent = "Bấm để gửi lời";
+        
+        // Add success animation
+        actionBtn.style.animation = "pulse 1.5s infinite";
+        
+        // Create CSS for pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+          }
+        `;
+        document.head.appendChild(style);
+      } else {
+        loginMsg.textContent = "Sai tài khoản hoặc mật khẩu. Thử lại nhé.";
+        
+        // small shake effect
+        (function shake(el) {
+          el.style.transition = "transform .05s";
+          el.style.transform = "translateX(-6px)";
+          setTimeout(() => {
+            el.style.transform = "translateX(6px)";
+          }, 60);
+          setTimeout(() => {
+            el.style.transform = "translateX(0)";
+          }, 120);
+        })(loginMsg);
+      }
+    });
+    
+    actionBtn.addEventListener('click', () => {
+      if (!loggedIn) return;
+      
+      clickCount++;
+      
+      if (clickCount === 1) {
+        // show long message
+        messageCard.textContent = "";
+        const p = document.createElement('div');
+        p.style.whiteSpace = "pre-wrap";
+        p.textContent = longMessage;
+        messageCard.appendChild(p);
+        actionBtn.textContent = "Bấm lần nữa để nhận lời chúc";
+      } else if (clickCount === 2) {
+        // show final wish + sunflower
+        messageCard.textContent = "";
+        finalWish.textContent = shortWish;
+        finalWish.classList.add('show');
+        finalWish.setAttribute('aria-hidden', 'false');
+        
+        // reveal sunflower
+        sunflower.classList.add('show');
+        sunflower.setAttribute('aria-hidden', 'false');
+        
+        // make a few hearts pop
+        for (let i = 0; i < 6; i++) {
+          setTimeout(() => spawnHeart(i), i * 180);
+        }
+        
+        actionBtn.textContent = "Đã gửi lời chúc";
+        actionBtn.disabled = true;
+        actionBtn.style.animation = "none";
+      }
+    });
+    
+    function spawnHeart(i) {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      heartsContainer.appendChild(h);
+      
+      // random position
+      h.style.right = (20 + Math.random() * 100) + 'px';
+      h.style.top = (10 + Math.random() * 60) + 'px';
+      
+      // start animation
+      setTimeout(() => h.classList.add('pop'), 20);
+      
+      // remove later
+      setTimeout(() => h.remove(), 1200 + Math.random() * 400);
+    }
+    
+    // usability: press Enter to login
+    [userInput, passInput].forEach(el => {
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') loginBtn.click();
+      });
+    });
+  </script>
+</body>
+</html>
